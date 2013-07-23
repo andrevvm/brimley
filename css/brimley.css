@@ -1,0 +1,150 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800);
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+header {
+  margin: 50px 0 70px;
+  text-align: center;
+}
+
+header h1 {
+  display: inline-block;
+  margin: 0;
+}
+
+header h1 a {
+  display: inline-block;
+  width: 318px;
+  height: 137px;
+  text-indent: -9000px;
+  overflow: hidden;
+  direction: ltr;
+  background: url(../img/logo.png);
+}
+
+nav {
+  font-weight: 800;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav a {
+  font-size: 20px;
+  font-size: 2.0rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+article {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+article img {
+  max-width: 580px;
+  padding: 10px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.caption {
+  position: relative;
+  margin: 0;
+  padding: 10px 20px 20px;
+  top: -5px;
+  border-radius: 2px;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.meta {
+  padding: 20px 0 30px;
+  border-bottom: 2px solid rgba(255,255,255,0.5);
+  font-weight: 800;
+  color: #000;
+  color: rgba(0,0,0,0.3);
+}
+
+.notes {
+  float: right;
+}
+
+
+/*=========================== Animations */
+
+.v {
+  position: relative;
+  -webkit-animation-name: vertical;
+  -webkit-animation-duration: .18s;
+}
+
+.v-alt {
+  position: relative;
+  -webkit-animation-name: vertical-alt;
+  -webkit-animation-duration: .18s;
+}
+
+.a {
+  display: inline-block;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+.pause .a {
+  -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes vertical {
+  0% {
+    top: 0;
+  }
+
+  25% {
+    top: 0.09em;
+  }
+
+  75% {
+    top: -0.09em;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes vertical-alt {
+  0% {
+    top: 0;
+  }
+
+  25% {
+    top: -0.1em;
+  }
+
+  75% {
+    top: 0.1em;
+  }
+
+  100% {
+    top: 0;
+  }
+}
