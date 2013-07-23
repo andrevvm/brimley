@@ -93,7 +93,7 @@ article img {
 
 h1 a:hover {
   -webkit-animation-name: mustache;
-  -webkit-animation-duration: .2s;
+  -webkit-animation-duration: .4s;
 }
 
 .v {
@@ -123,12 +123,16 @@ h1 a:hover {
     -webkit-transform: rotate(0deg);
   }
 
-  25% {
-    -webkit-transform: rotate(5deg);
+  15% {
+    -webkit-transform: rotate(4deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(-2deg);
   }
 
   75% {
-    -webkit-transform: rotate(-2deg);
+    -webkit-transform: rotate(1deg);
   }
 
   100% {
