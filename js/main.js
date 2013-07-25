@@ -1,20 +1,23 @@
 $(function() {
+  funVerbs();
+
   $(window).scroll(function() {
     var hue = Math.round($(window).scrollTop() / 12);
     $("body").css({
       "background-color": "hsl("+hue+", 100%, 70%)"
     });
   });
-  $("nav a").each(function() {
-    $(this).html(animateLetters($(this).html()));
+  $("a").addClass('pause');
+  var $splits = $("a:not(.no-split)");
+  $splits.each(function() {
+    $(this).html(splitLetters($(this)));
   });
-  $("nav a").hover(function() {
+  $splits.hover(function() {
     startAnimateLetters($(this));
   }, function(){
     stopAnimateLetters($(this));
   });
 
-  funVerbs();
 });
 
 function startAnimateLetters(el) {
@@ -35,10 +38,26 @@ function stopAnimateLetters(el) {
     $(".remove").remove();
 }
 
-function animateLetters(str) {
+function splitLetters(el) {
+  var str = el.html();
   var output = "";
+  var regex = /(<([^>]+)>)/ig;
+  var matches = str.match(regex);
+  var htmls = [];
+  function convert(str, p1, p2, offset, s)
+  {
+    htmls.push(p1);
+    return "☀";
+  }
+  var result = str.replace(regex, convert);
+  el.html(result);
+  str = el.html();
   str = str.split("");
   for(var i = 0; i < str.length; i++) {
+    if(str[i] === '☀') {
+      output += '☀';
+      continue;
+    }
     if(i % 2 === 0) {
       c = "v";
     } else {
@@ -46,7 +65,15 @@ function animateLetters(str) {
     }
     output += "<span class='a "+c+"'>"+str[i]+"</span>";
   }
-  return output;
+  regex = /(☀)/ig;
+  var count = -1;
+  function restore(str, p1, offset, s)
+  {
+    count++;
+    return htmls[count];
+  }
+  var finale = output.replace(regex,restore);
+  return finale;
 }
 
 function funVerbs() {

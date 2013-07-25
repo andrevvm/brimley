@@ -5,13 +5,19 @@ html {
 }
 
 body {
-  font-family: "Open Sans";
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
 }
 
 header {
-  margin: 50px 0 70px;
+  margin: 50px 0 60px;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #555;
 }
 
 header h1 {
@@ -84,6 +90,12 @@ article img {
   color: rgba(0,0,0,0.3);
 }
 
+.meta a {
+  text-decoration: none;
+  color: #000;
+  color: rgba(0,0,0,0.3);
+}
+
 .notes {
   float: right;
 }
@@ -108,8 +120,8 @@ h1 a:hover {
   -webkit-animation-duration: .18s;
 }
 
+
 .a {
-  display: inline-block;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
 }
