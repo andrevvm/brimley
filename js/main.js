@@ -99,7 +99,7 @@ function funVerbs() {
 }
 
 function instanames() {
-  $(".instagram .caption:contains('@')").each(function(){
+  $(".instagram .caption p:contains('@')").each(function(){
     var regex = /@([^\s]+)/ig;
     var str = $(this).html();
     var matches = str.match(regex);
