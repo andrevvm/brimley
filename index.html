@@ -7,9 +7,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/brimley.css">
+        <link rel="stylesheet" href="http://andrevvm.github.io/brimley/css/normalize.min.css">
+        <link rel="stylesheet" href="http://andrevvm.github.io/brimley/css/main.css">
+        <link rel="stylesheet" href="http://andrevvm.github.io/brimley/css/brimley.css">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -25,19 +25,45 @@
                 </ul>
             </nav>
         </header>
+        {block:Posts}
+        <article class="post {block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Quote}quote{/block:Quote}{block:Video}video{/block:Video}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Audio}audio{/block:Audio}{block:Answer}answer{/block:Answer} {TagsAsClasses}">
+            
+            {block:Text}
+            {block:Title}
+            <h2>
+                {Title}
+            </h2>
+            {/block:Title}
+            {Body}
+            {/block:Text}
 
-        <article>
-            <img src="http://distilleryimage11.ak.instagram.com/277fbeb6f30c11e2b12d22000a9e295b_7.jpg" />
-            <p class="caption">@jeffstevens a leap of faith. Not THE leap of faith, but this required prayers.</p>
+            {block:Photo}
+            <img src="{PhotoURL-HighRes}" />
+            {block:Caption}
+            <div class="caption">
+                {Caption}
+            </div>
+            {/block:Caption}
+            {/block:Photo}
+
             <section class="meta">
+                {block:Date}
                 <span class="date">
-                    Friday, July 23 at 4:20<small>PM</small>
+                    <a href="{Permalink}">{DayOfWeek}, {ShortMonth} {DayOfMonth} at 4:20<small>PM</small></a>
                 </span>
+                {/block:Date}
+                {block:NoteCount}
                 <span class="notes">
-                    20 people <span class="verb">hate</span> this
+                    <a href="{Permalink}">
+                        <span class="note-count">{NoteCount}</span> <span class="people">people</span> <span class="verb">hate</span> this
+                    </a>
                 </span>
+                {/block:NoteCount}
             </section>
+
         </article>
+        {/block:Posts}
+
 
         <article>
             <img src="http://distilleryimage3.ak.instagram.com/39bb9200f23811e28a5c22000a1f8acf_7.jpg" />
@@ -125,10 +151,27 @@
             </section>
         </article>
 
-        <article>
+        <article class="instagram">
             <img src="http://distilleryimage3.ak.instagram.com/39bb9200f23811e28a5c22000a1f8acf_7.jpg" />
             <p class="caption">
                 The easiest way to make someones lame skating look cool. @priceyhot
+            </p>
+            <section class="meta">
+                <span class="date">
+                    Friday, July 23 at 4:20<small>PM</small>
+                </span>
+                <span class="notes">
+                    <a href="#">20 people <span class="verb">hate</span> this</a>
+                </span>
+            </section>
+        </article>
+
+        <article class="text">
+            <h2>
+                New boards
+            </h2>
+            <p>
+                New boards are available in the <a href="#">shop</a>.
             </p>
             <section class="meta">
                 <span class="date">
@@ -156,7 +199,7 @@
         </article>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="http://andrevvm.github.io/brimley/js/main.js"></script>
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

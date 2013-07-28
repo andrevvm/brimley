@@ -1,5 +1,6 @@
 $(function() {
   funVerbs();
+  instanames();
 
   $(window).scroll(function() {
     var hue = Math.round($(window).scrollTop() / 12);
@@ -53,12 +54,21 @@ function splitLetters(el) {
   el.html(result);
   str = el.html();
   str = str.split("");
+  var count = -1;
+  var lCount = -1;
   for(var i = 0; i < str.length; i++) {
+    lCount ++;
     if(str[i] === '☀') {
       output += '☀';
+      lCount++;
       continue;
     }
-    if(i % 2 === 0) {
+    if(str[i] === ' ') {
+      output += " ";
+      lCount ++;
+      continue;
+    }
+    if(lCount % 2 === 0) {
       c = "v";
     } else {
       c ="v-alt";
@@ -66,7 +76,6 @@ function splitLetters(el) {
     output += "<span class='a "+c+"'>"+str[i]+"</span>";
   }
   regex = /(☀)/ig;
-  var count = -1;
   function restore(str, p1, offset, s)
   {
     count++;
@@ -81,5 +90,25 @@ function funVerbs() {
   $(".verb").each(function() {
     var v = verbs[Math.floor(Math.random()*verbs.length)];
     $(this).text(v);
+  });
+  $(".note-count").each(function() {
+    if($(this).text() === "1") {
+      $(this).next('.person').text("people");
+    }
+  });
+}
+
+function instanames() {
+  $(".instagram .caption:contains('@')").each(function(){
+    var regex = /@([^\s]+)/ig;
+    var str = $(this).html();
+    var matches = str.match(regex);
+    function instalink(str, p1, offset, s) {
+      var username = p1.split("@")[0];
+      var result = '<a href="http://instagram.com/'+username+'" target="_blank">'+str+'</a>';
+      return result;
+    }
+    str = str.replace(regex, instalink);
+    $(this).html(str);
   });
 }
