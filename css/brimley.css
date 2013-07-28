@@ -86,6 +86,11 @@ article.text {
   color: #000;
 }
 
+.video .iframe {
+  position: relative;
+  left: -50px;
+}
+
 .caption {
   position: relative;
   margin: 0;
