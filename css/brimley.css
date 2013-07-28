@@ -59,6 +59,11 @@ nav a {
   display: inline-block;
 }
 
+nav a:selected {
+  color: #fff;
+  color: rgba(255,255,255,0.5);
+}
+
 article {
   width: 600px;
   margin: 0 auto;
