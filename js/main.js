@@ -1,6 +1,7 @@
 $(function() {
   funVerbs();
   instanames();
+  teamViewer();
   if($("body").hasClass('feed')) {
     $(window).scroll(function() {
       var hue = Math.round($(window).scrollTop() / 12);
@@ -118,5 +119,6 @@ function instanames() {
 function teamViewer() {
   $("team-list a").click(function() {
     $("team-viewer").addClass('show');
+    console.log('radical');
   });
 }
