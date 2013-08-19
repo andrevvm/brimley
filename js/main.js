@@ -114,3 +114,9 @@ function instanames() {
     $(this).html(str);
   });
 }
+
+function teamViewer() {
+  $("team-list a").click(function() {
+    $("team-viewer").addClass('show');
+  });
+}
