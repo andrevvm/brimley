@@ -7,7 +7,15 @@ html {
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
+  padding: 0 0 40px;
+  background: #eee;
 }
+
+body.feed {
+  background: hsl(0, 100%, 70%);
+}
+
+
 
 header {
   margin: 50px 0 60px;
@@ -33,7 +41,7 @@ header h1 a {
   text-indent: -9000px;
   overflow: hidden;
   direction: ltr;
-  background: url(../img/logo.png);
+  background: url(http://andrevvm.github.io/brimley/img/logo.png);
 }
 
 nav {
@@ -68,6 +76,7 @@ article {
   width: 600px;
   margin: 0 auto;
   margin-bottom: 80px;
+  border-bottom: 2px solid rgba(255,255,255,0.5);
 }
 
 article img {
@@ -91,9 +100,11 @@ article.text {
   color: #000;
 }
 
-.video .iframe {
+.video iframe {
   position: relative;
-  left: -50px;
+  left: -70px;
+  border: 10px solid white;
+  border-radius: 2px;
 }
 
 .caption {
@@ -109,7 +120,6 @@ article.text {
 
 .meta {
   padding: 20px 0 30px;
-  border-bottom: 2px solid rgba(255,255,255,0.5);
   font-weight: 800;
   color: #000;
   color: rgba(0,0,0,0.3);
