@@ -117,8 +117,8 @@ function instanames() {
 }
 
 function teamViewer() {
-  $("team-list a").click(function() {
-    $("team-viewer").addClass('show');
+  $(".team-list a").click(function() {
+    $(".team-viewer").addClass('show');
     console.log('radical');
   });
 }

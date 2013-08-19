@@ -192,13 +192,13 @@ article.text {
   height: 980px;
   background: #FB5757;
   position: absolute;
-  left: -940px;
+  right: -940px;
   z-index: 100;
-  -webkit-transition: left .2s;
+  -webkit-transition: right .3s;
 }
 
 .team-viewer.show {
-  left: calc(50% - 470px);
+  right: calc(50% - 470px);
 }
 
 
