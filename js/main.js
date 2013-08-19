@@ -1,13 +1,15 @@
 $(function() {
   funVerbs();
   instanames();
-
-  $(window).scroll(function() {
-    var hue = Math.round($(window).scrollTop() / 12);
-    $("body").css({
-      "background-color": "hsl("+hue+", 100%, 70%)"
+  if("body").hasClass('feed') {
+    $(window).scroll(function() {
+      var hue = Math.round($(window).scrollTop() / 12);
+      $("body").css({
+        "background-color": "hsl("+hue+", 100%, 70%)"
+      });
     });
-  });
+  }
+  
   $("a").addClass('pause');
   var $splits = $("a:not(.no-split)");
   $splits.each(function() {

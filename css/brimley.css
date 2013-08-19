@@ -59,7 +59,7 @@ nav a {
   display: inline-block;
 }
 
-nav a:selected {
+nav a.selected {
   color: #fff;
   color: rgba(255,255,255,0.5);
 }
