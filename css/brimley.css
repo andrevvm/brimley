@@ -148,6 +148,16 @@ article.text {
   float: right;
 }
 
+/*=========================== Team Page */
+
+.team-holder {
+  width: 960px;
+}
+
+.team-holder li {
+  float: left;
+  margin: 10px 20px;
+}
 
 /*=========================== Animations */
 
