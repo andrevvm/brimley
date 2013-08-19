@@ -62,15 +62,26 @@ nav a {
   font-size: 20px;
   font-size: 2.0rem;
   text-decoration: none;
-  color: white;
+  color: #5F5F5F;
   text-transform: uppercase;
   display: inline-block;
 }
 
 nav a.selected {
+  color: #9B9B9B;
+  color: rgba(0,0,0,0.35);
+}
+
+body.feed nav a {
+  color: white;
+}
+
+body.feed nav a.selected {
   color: #fff;
   color: rgba(255,255,255,0.5);
 }
+
+
 
 article {
   width: 600px;
