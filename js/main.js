@@ -125,6 +125,7 @@ function teamViewer() {
     goToImage();
     e.preventDefault();
     setTimeout(function() {
+      $("window").scrollTop(260);
       $(".team-viewer").addClass('show');
       $(".team-viewer.show").click(function(e){
         if(!$(e.target).hasClass('arrow')) {
