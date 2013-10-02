@@ -116,12 +116,47 @@ function instanames() {
   });
 }
 
+var index = 0;
+var team_count = $(".team-list li").length - 1;
+
 function teamViewer() {
   $(".team-list a").click(function(e) {
+    index = $(this).parent('li').index();
+    goToImage();
     e.preventDefault();
-    $(".team-viewer").addClass('show');
-    $(".team-viewer").click(function(){
-      $(this).removeClass('show');
-    });
+    setTimeout(function() {
+      $(".team-viewer").addClass('show');
+      $(".team-viewer.show").click(function(e){
+        if(!$(e.target).hasClass('arrow')) {
+          $(this).removeClass('show');
+        }
+      });
+    }, 10);
+    
   });
+}
+
+$(".arrow.right").click(function(e) {
+  e.preventDefault();
+  if(index === team_count) {
+    index = 0;
+  } else {
+    index++;
+  }
+  goToImage();
+});
+
+$(".arrow.left").click(function(e) {
+  e.preventDefault();
+  if(index === 0) {
+    index = team_count;
+  } else {
+    index--;
+  }
+  goToImage();
+});
+
+function goToImage() {
+  left = -(index * 940);
+  $(".team-slider").css('left',left);
 }

@@ -150,6 +150,10 @@ article.text {
 
 /*=========================== Team Page */
 
+.team-page {
+  padding-bottom: 80px;
+}
+
 .team-holder {
   width: 960px;
   margin: 0 auto;
@@ -159,6 +163,12 @@ article.text {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.team-list:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .team-list li {
@@ -196,6 +206,7 @@ article.text {
   left: calc(50% - 470px);
   z-index: 100;
   -webkit-transition: top .3s;
+  overflow: hidden;
 }
 
 .team-viewer.show {
@@ -203,11 +214,22 @@ article.text {
 }
 
 .team-slider {
+  position: relative;
   list-style: none;
   text-align: center;
   padding: 0;
   margin: 0;
   color: white;
+  width: 50000px;
+}
+
+.team-viewer.show .team-slider {
+  -webkit-transition: left .5s;
+}
+
+.team-slider li {
+  float: left;
+  width: 940px;
 }
 
 .team-viewer h2 {
@@ -229,6 +251,8 @@ article.text {
 
 .team-viewer img {
   border: 10px solid white;
+  max-width: 800px;
+  max-height: 700px;
 }
 
 .arrow {
@@ -236,6 +260,13 @@ article.text {
   color: #fff;
   opacity: 0.5;
   position: absolute;
+  z-index: 1000;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;
 }
 
 .arrow:hover {
