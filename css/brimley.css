@@ -205,8 +205,12 @@ article.text {
   position: absolute;
   top: -1000px;
   left: calc(50% - 470px);
+  left: -webkit-calc(50% - 470px);
+  left: -moz-calc(50% - 470px);
   z-index: 100;
   -webkit-transition: top .3s;
+  -moz-transition: top .3s;
+  transition: top .3s;
   overflow: hidden;
 }
 
@@ -226,6 +230,8 @@ article.text {
 
 .team-viewer.show .team-slider {
   -webkit-transition: left .5s;
+  -moz-transition: left .5s;
+  transition: left .5s;
 }
 
 .team-slider li {
@@ -295,49 +301,77 @@ article.text {
 h1 a:hover {
   -webkit-animation-name: mustache;
   -webkit-animation-duration: .4s;
+  -moz-animation-name: mustache;
+  -moz-animation-duration: .4s;
+  animation-name: mustache;
+  animation-duration: .4s;
 }
 
 .v {
   position: relative;
   -webkit-animation-name: vertical;
   -webkit-animation-duration: .18s;
+  -moz-animation-name: vertical;
+  -moz-animation-duration: .18s;
+  animation-name: vertical;
+  animation-duration: .18s;
 }
 
 .v-alt {
   position: relative;
   -webkit-animation-name: vertical-alt;
   -webkit-animation-duration: .18s;
+  -moz-animation-name: vertical-alt;
+  -moz-animation-duration: .18s;
+  animation-name: vertical-alt;
+  animation-duration: .18s;
 }
 
 
 .a {
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .pause .a {
   -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 @-webkit-keyframes mustache {
   0% {
     -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   15% {
     -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    transform: rotate(4deg);
   }
 
   30% {
     -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    transform: rotate(-2deg);
   }
 
   75% {
     -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    transform: rotate(1deg);
   }
 
   100% {
     -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -360,6 +394,78 @@ h1 a:hover {
 }
 
 @-webkit-keyframes vertical-alt {
+  0% {
+    top: 0;
+  }
+
+  25% {
+    top: -0.1em;
+  }
+
+  75% {
+    top: 0.1em;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@-moz-keyframes vertical {
+  0% {
+    top: 0;
+  }
+
+  25% {
+    top: 0.09em;
+  }
+
+  75% {
+    top: -0.09em;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@-moz-keyframes vertical-alt {
+  0% {
+    top: 0;
+  }
+
+  25% {
+    top: -0.1em;
+  }
+
+  75% {
+    top: 0.1em;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes vertical {
+  0% {
+    top: 0;
+  }
+
+  25% {
+    top: 0.09em;
+  }
+
+  75% {
+    top: -0.09em;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes vertical-alt {
   0% {
     top: 0;
   }
