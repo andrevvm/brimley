@@ -1868,8 +1868,24 @@ body.feed {
   margin: 0 auto;
 }
 
-#contact_page h1 {
+#cart_page, .custom_page {
+  width: 500px;
+  min-width: 500px;
   margin: 0 auto;
+}
+
+#cart_page h1,
+#contact_page h1,
+#product_detail_info h1 {
+  margin: 0 auto;
+}
+
+#product_detail_info h1 {
+  text-align: left;
+}
+
+#error ul li {
+  color: #ee0000;
 }
 
 header {

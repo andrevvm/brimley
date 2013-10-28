@@ -93,7 +93,6 @@ function funVerbs() {
   var singular_verbs = new Array("hates","is disgusted by","loathes","despises","dislikes","regrets");
   $(".notes").each(function() {
     var noteCount = $(this).find('.note-count').text();
-    console.log(noteCount);
     if (noteCount == 1) {
       var v = singular_verbs[Math.floor(Math.random()*singular_verbs.length)];
       $(this).find('.people').text('person');
@@ -129,7 +128,9 @@ function teamViewer() {
     goToImage();
     e.preventDefault();
     setTimeout(function() {
-      $("window").scrollTop(260);
+      $('body,html').animate({
+        scrollTop: 0
+      }, 800);
       $(".team-viewer").addClass('show');
       $(".team-viewer.show").click(function(e){
         if(!$(e.target).hasClass('arrow')) {
