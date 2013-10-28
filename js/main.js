@@ -91,17 +91,17 @@ function splitLetters(el) {
 function funVerbs() {
   var verbs = new Array("hate","are disgusted by","loathe","despise","dislike","regret");
   var singular_verbs = new Array("hates","is disgusted by","loathes","despises","dislikes","regrets");
-  $(".verb").each(function() {
-    var noteCount = $(this).prev('.note-count').text();
+  $(".notes").each(function() {
+    var noteCount = $(this).find('.note-count').text();
     console.log(noteCount);
     if (noteCount == 1) {
       var v = singular_verbs[Math.floor(Math.random()*singular_verbs.length)];
-      $(this).prev('people').text('person');
+      $(this).find('people').text('person');
     } else {
       var v = verbs[Math.floor(Math.random()*verbs.length)];
     }
     
-    $(this).text(v);
+    $(this).find('.verb').text(v);
   });
 }
 
