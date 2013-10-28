@@ -89,8 +89,8 @@ function splitLetters(el) {
 }
 
 function funVerbs() {
-  var verbs = new Array("hate","are disgusted by","loathe","despise","dislike");
-  var singular_verbs = new Array("hates","is disgusted by","loathes","despises","dislikes")
+  var verbs = new Array("hate","are disgusted by","loathe","despise","dislike","regret");
+  var singular_verbs = new Array("hates","is disgusted by","loathes","despises","dislikes","regrets");
   $(".verb").each(function() {
     var noteCount = $(this).prev('.note-count').find('span').text();
     if (noteCount == 1) {
