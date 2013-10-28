@@ -92,7 +92,8 @@ function funVerbs() {
   var verbs = new Array("hate","are disgusted by","loathe","despise","dislike","regret");
   var singular_verbs = new Array("hates","is disgusted by","loathes","despises","dislikes","regrets");
   $(".verb").each(function() {
-    var noteCount = $(this).prev('.note-count').find('span').text();
+    var noteCount = $(this).prev('.note-count').text();
+    console.log(noteCount);
     if (noteCount == 1) {
       var v = singular_verbs[Math.floor(Math.random()*singular_verbs.length)];
       $(this).prev('people').text('person');
