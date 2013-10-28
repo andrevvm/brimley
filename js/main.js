@@ -96,7 +96,7 @@ function funVerbs() {
     console.log(noteCount);
     if (noteCount == 1) {
       var v = singular_verbs[Math.floor(Math.random()*singular_verbs.length)];
-      $(this).find('people').text('person');
+      $(this).find('.people').text('person');
     } else {
       var v = verbs[Math.floor(Math.random()*verbs.length)];
     }
