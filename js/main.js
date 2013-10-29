@@ -130,7 +130,7 @@ function teamViewer() {
     setTimeout(function() {
       $('body,html').animate({
         scrollTop: 260
-      }, 800);
+      }, 300);
       $(".team-viewer").addClass('show');
       $(".team-viewer.show").click(function(e){
         if(!$(e.target).hasClass('arrow')) {
