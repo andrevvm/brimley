@@ -89,15 +89,18 @@ function splitLetters(el) {
 }
 
 function funVerbs() {
-  var verbs = new Array("hate","are disgusted by","loathe","despise","dislike");
-  $(".verb").each(function() {
-    var v = verbs[Math.floor(Math.random()*verbs.length)];
-    $(this).text(v);
-  });
-  $(".note-count").each(function() {
-    if($(this).text() === "1") {
-      $(this).next('.person').text("people");
+  var verbs = new Array("hate","are disgusted by","loathe","despise","dislike","regret");
+  var singular_verbs = new Array("hates","is disgusted by","loathes","despises","dislikes","regrets");
+  $(".notes").each(function() {
+    var noteCount = $(this).find('.note-count').text();
+    if (noteCount == 1) {
+      var v = singular_verbs[Math.floor(Math.random()*singular_verbs.length)];
+      $(this).find('.people').text('person');
+    } else {
+      var v = verbs[Math.floor(Math.random()*verbs.length)];
     }
+    
+    $(this).find('.verb').text(v);
   });
 }
 
@@ -125,7 +128,9 @@ function teamViewer() {
     goToImage();
     e.preventDefault();
     setTimeout(function() {
-      $("window").scrollTop(260);
+      $('body,html').animate({
+        scrollTop: 260
+      }, 300);
       $(".team-viewer").addClass('show');
       $(".team-viewer.show").click(function(e){
         if(!$(e.target).hasClass('arrow')) {
